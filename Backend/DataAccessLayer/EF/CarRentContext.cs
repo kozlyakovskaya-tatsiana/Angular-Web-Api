@@ -12,10 +12,10 @@ namespace DataAccessLayer.EF
     {
         public CarRentContext() : base("DbConnection") { }
 
-        DbSet<Car> Cars { get; set; }
+        public DbSet<Car> Cars { get; set; }
 
-        DbSet<Client> Clients { get; set; }
+        public DbSet<Client> Clients { get; set; }
 
-        DbSet<CarRent> CarRents { get; set; }
+        public DbSet<CarRent> CarRents { get; set; }
     }
 }

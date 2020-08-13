@@ -1,0 +1,14 @@
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\bin\Debug\DataAccessLayer.exe.config
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\bin\Debug\DataAccessLayer.exe
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\obj\Debug\DataAccessLayer.csprojAssemblyReference.cache
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CopyComplete
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\obj\Debug\DataAccessLayer.exe
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.Initial.resources
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.GenerateResource.cache
