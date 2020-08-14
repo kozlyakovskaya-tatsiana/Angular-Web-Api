@@ -13,6 +13,7 @@ import { CarCardComponent } from './car-card/car-card.component';
 import { CarSectionComponent } from './car-section/car-section.component';
 import { HeadComponent } from './head/head.component';
 import { FooterComponent } from './footer/footer.component';
+import { AddCarComponent } from './add-car/add-car.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FooterComponent } from './footer/footer.component';
     CarCardComponent,
     CarSectionComponent,
     HeadComponent,
-    FooterComponent
+    FooterComponent,
+    AddCarComponent
   ],
   imports: [
     BrowserModule,

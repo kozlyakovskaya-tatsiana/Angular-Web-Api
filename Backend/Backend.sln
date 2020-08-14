@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAcce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCarRentServer", "WebCarRentServer\WebCarRentServer.csproj", "{77305698-25B1-4E57-995F-AF45D2DE116E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogicLayer", "BusinessLogicLayer\BusinessLogicLayer.csproj", "{74258F08-FB11-45F9-9F50-D66F06AB3C0D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{77305698-25B1-4E57-995F-AF45D2DE116E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77305698-25B1-4E57-995F-AF45D2DE116E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77305698-25B1-4E57-995F-AF45D2DE116E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74258F08-FB11-45F9-9F50-D66F06AB3C0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74258F08-FB11-45F9-9F50-D66F06AB3C0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74258F08-FB11-45F9-9F50-D66F06AB3C0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74258F08-FB11-45F9-9F50-D66F06AB3C0D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

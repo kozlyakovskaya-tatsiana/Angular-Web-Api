@@ -1,0 +1,12 @@
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\BusinessLogicLayer\bin\Debug\EntityFramework.dll
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\BusinessLogicLayer\bin\Debug\EntityFramework.xml
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csprojAssemblyReference.cache
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CopyComplete
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb

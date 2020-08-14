@@ -117,3 +117,5 @@ C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\WebCarRentServer\obj\Debug\Web
 C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\WebCarRentServer\obj\Debug\WebCarRentServer.csproj.CopyComplete
 C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\WebCarRentServer\obj\Debug\WebCarRentServer.dll
 C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\WebCarRentServer\obj\Debug\WebCarRentServer.pdb
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\WebCarRentServer\bin\BusinessLogicLayer.dll
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\WebCarRentServer\bin\BusinessLogicLayer.pdb
