@@ -12,3 +12,8 @@ C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\obj\Debug\Data
 C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
 C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\bin\Debug\DataAccessLayer.dll
 C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.ChangingCar.resources
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.ChangingCar2.resources
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.AddCategoryTable.resources
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.RenameColumnCarTable.resources
+C:\Users\Tatsiana\Desktop\Angular-Web-Api\Backend\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.carChangingProperty.resources

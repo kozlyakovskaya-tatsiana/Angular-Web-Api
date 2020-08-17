@@ -1,1 +1,5 @@
-<p>autopark works!</p>
+<div class="container">
+  <div class="row">
+    <app-car-card class="col-md-3 mt-3" *ngFor="let car of cars" [car]="car"></app-car-card>
+  </div>
+</div>

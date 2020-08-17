@@ -22,16 +22,21 @@ namespace DataAccessLayer.Entities
         public string Color { get; set; }
 
         [Required]
-        public string Carsase { get; set; }
+        public string Carcase { get; set; }
 
         [Required]
-        public string MaxPassengersAmount { get; set; }
+        public int MaxPassengersAmount { get; set; }
 
         [Required]
         public string ImgSrc { get; set; }
 
         [Required]
-        public string Category { get; set; }
+        public double  CostRentForDay { get; set; }
+
+
+        public CarCategory Category { get; set; }
+
+        public int? CategoryId { get; set; }
 
 
         public ICollection<CarRent> CarRents { get; set; }

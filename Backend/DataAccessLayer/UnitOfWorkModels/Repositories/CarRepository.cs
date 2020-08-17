@@ -40,13 +40,13 @@ namespace DataAccessLayer.UnitOfWorkModels.Repositories
 
         public Car Get(int id)
         {
-            return _db.Cars.Find(id) ??
+            return _db.Cars.Include(car => car.Category).Where(car=>car.Id == id).FirstOrDefault() ??
                 throw new Exception($"Car with id={id} is not found.");
         }
 
-        public IEnumerable<Car> GetAll()
+        public IQueryable<Car> GetAll()
         {
-            return _db.Cars.ToArray();
+            return _db.Cars.Include(car=> car.Category);
         }
 
         public void Update(Car item)

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {CarViewModel} from '../car-card/car-card.component';
+import {Car} from '../add-car/add-car.component';
+/*import {CarViewModel} from '../car-card/car-card.component';*/
 
 export class CarCategory {
   constructor(public text: string, public imgSrc: string) {
@@ -14,7 +15,14 @@ export class CarCategory {
 
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    this.car = new Car();
+    this.car.Name = 'Audi X540SA';
+    this.car.ImgSrc = 'assets/bmw1.jpg';
+    this.car.Year = 2017;
+    this.car.CostRentForDay = 17.89;
+    this.cars = [this.car, this.car, this.car, this.car];
+  }
 
   carCategories: CarCategory[] = [
     new CarCategory('Economy class', 'assets/ekonom.jpg'),
@@ -23,8 +31,8 @@ export class MainComponent implements OnInit {
     new CarCategory('Minibuses', 'assets/minibus.jpg'),
 
   ];
-  car: CarViewModel = new CarViewModel('Audi X540SA', 'assets/bmw1.jpg', 2017, 17.89);
-  cars: CarViewModel[] = [this.car, this.car, this.car, this.car];
+  car: Car;
+  cars: Car[];
 
   ngOnInit(): void {
   }

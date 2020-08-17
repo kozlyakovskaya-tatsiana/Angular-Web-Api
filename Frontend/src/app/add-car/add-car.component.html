@@ -1,36 +1,91 @@
 <div class="container mt-3 mb-3">
   <h3 class="row col-md-6 offset-md-5">Add new car</h3>
-  <form>
-    <div class="form-group row col-md-6 offset-md-2">
+  <form [formGroup]="addForm">
+    <div class="form-group row col-md-6 offset-md-3">
       <label for="carName">Car's name</label>
-      <input type="text" class="form-control" id="carName">
+      <input type="text" class="form-control" id="carName" formControlName="carName" [(ngModel)]="car.Name">
+      <div *ngIf="addForm.controls['carName'].invalid" class="error">
+        <div *ngIf="addForm.controls['carName'].errors.required && addForm.controls['carName'].touched">
+          Name is required
+        </div>
+        <div *ngIf="addForm.controls['carName'].errors.maxlength && addForm.controls['carName'].touched">
+          Name must be less than 50 symbols
+        </div>
+      </div>
     </div>
-    <div class="form-group row col-md-6 offset-md-2">
+    <div class="form-group row col-md-6 offset-md-3">
       <label for="carYear">Car's year</label>
-      <input type="number" class="form-control" id="carYear">
+      <input type="number" class="form-control" id="carYear" formControlName="carYear" [(ngModel)]="car.Year">
+      <div *ngIf="addForm.controls['carYear'].invalid" class="error">
+        <div *ngIf="addForm.controls['carYear'].errors.required && addForm.controls['carYear'].touched">
+          Year is required
+        </div>
+        <div *ngIf="addForm.controls['carYear'].errors.min && addForm.controls['carYear'].touched">
+          Year must be no less than 1800
+        </div>
+      </div>
     </div>
-    <div class="form-group row col-md-6 offset-md-2">
+    <div class="form-group row col-md-6 offset-md-3">
+      <label for="carCost">Car's cost</label>
+      <input type="number" class="form-control" id="carCost" formControlName="carCost" [(ngModel)]="car.CostRentForDay">
+      <div *ngIf="addForm.controls['carCost'].invalid" class="error">
+        <div *ngIf="addForm.controls['carCost'].errors.required && addForm.controls['carCost'].touched">
+          Car's cost is required
+        </div>
+      </div>
+    </div>
+    <div class="form-group row col-md-6 offset-md-3">
       <label for="carColor">Car's color</label>
-      <input type="text" class="form-control" id="carColor">
+      <input type="text" class="form-control" id="carColor" formControlName="carColor" [(ngModel)]="car.Color">
+      <div *ngIf="addForm.controls['carColor'].invalid" class="error">
+        <div *ngIf="addForm.controls['carColor'].errors.required && addForm.controls['carColor'].touched">
+          Color is required
+        </div>
+      </div>
     </div>
-    <div class="form-group row col-md-6 offset-md-2">
+    <div class="form-group row col-md-6 offset-md-3">
       <label for="carCarcase">Car's carcase</label>
-      <input type="text" class="form-control" id="carCarcase">
+      <input type="text" class="form-control" id="carCarcase" formControlName="carCarcase" [(ngModel)]="car.Carcase">
+      <div *ngIf="addForm.controls['carCarcase'].invalid" class="error">
+        <div *ngIf="addForm.controls['carCarcase'].errors.required && addForm.controls['carCarcase'].touched">
+          Carcase is required
+        </div>
+      </div>
     </div>
-    <div class="form-group row col-md-6 offset-md-2">
+    <div class="form-group row col-md-6 offset-md-3">
       <label for="carYear">Car's capacity(passengers)</label>
-      <input type="number" class="form-control" id="carCapacity">
+      <input type="number" class="form-control" id="carCapacity" formControlName="carMaxPassengersAmount" [(ngModel)]="car.MaxPassengersAmount">
+      <div *ngIf="addForm.controls['carMaxPassengersAmount'].invalid" class="error">
+        <div *ngIf="addForm.controls['carMaxPassengersAmount'].errors.required && addForm.controls['carMaxPassengersAmount'].touched">
+          Capacity is required
+        </div>
+      </div>
     </div>
-    <div class="form-group row col-md-6 offset-md-2">
+    <div class="form-group row col-md-6 offset-md-3">
       <label for="carCategory">Car's category</label>
-      <input type="number" class="form-control" id="carCategory">
+      <select class="form-control" id="carCategory" formControlName="carCategory" [(ngModel)]="car.CategoryName">
+        <option *ngFor="let category of carCategories" [value]="category">{{category}}</option>
+      </select>
+      <div *ngIf="addForm.controls['carCategory'].invalid" class="error">
+        <div *ngIf="addForm.controls['carCategory'].errors.required && addForm.controls['carCategory'].touched">
+          Category is required
+        </div>
+      </div>
     </div>
-    <div class="row col-md-2 offset-md-4">
-      <button type="button" class="btn btn-warning mt-1">Upload image</button>
-      <input type="file"  style="display: none" accept="image/*">
+    <div class="row col-md-2 offset-md-5">
+      <button type="button" class="btn btn-warning mt-1" (click)="loadImage()">Upload image</button>
+      <input type="file" style="display: none" accept="image/*" formControlName="carImgSrc" id="uploadImgBtn" (change)="onFileChange($event)">
+      <div *ngIf="addForm.controls['carImgSrc'].invalid" class="error">
+        <div *ngIf="addForm.controls['carImgSrc'].errors.required">
+          Image is required
+        </div>
+      </div>
     </div>
-    <div class="row col-md-2 offset-md-7 mt-2">
-      <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="row col-md-3 offset-md-4 mt-3 mb-3">
+      <img *ngIf="car.ImgSrc" [src]="car.ImgSrc" width="280px">
+    </div>
+    <div class="row col-md-2 offset-md-8 mt-2">
+      <button id="submitbtn" type="submit" class="btn btn-primary" [disabled]="addForm.invalid" (click)="addCar($event)">Add car</button>
     </div>
   </form>
 </div>

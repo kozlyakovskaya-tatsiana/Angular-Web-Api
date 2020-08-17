@@ -18,6 +18,8 @@ namespace DataAccessLayer.UnitOfWorkModels
 
         private CarRentRepository _carRentRepository;
 
+        private CarCategoryRepository _carCategoryRepository;
+
         public UnitOfWork()
         {
             _db = new CarRentContext();
@@ -53,6 +55,17 @@ namespace DataAccessLayer.UnitOfWorkModels
                     _carRentRepository = new CarRentRepository(_db);
 
                 return _carRentRepository;
+            }
+        }
+
+        public CarCategoryRepository CarCategories
+        {
+            get
+            {
+                if (_carCategoryRepository == null)
+                    _carCategoryRepository = new CarCategoryRepository(_db);
+
+                return _carCategoryRepository;
             }
         }
 

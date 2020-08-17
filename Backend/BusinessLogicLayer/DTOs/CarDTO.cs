@@ -16,12 +16,14 @@ namespace BusinessLogicLayer.DTOs
 
         public string Color { get; set; }
 
-        public string Carsase { get; set; }
+        public string Carcase { get; set; }
 
-        public string MaxPassengersAmount { get; set; }
+        public int MaxPassengersAmount { get; set; }
 
         public string ImgSrc { get; set; }
 
-        public string Category { get; set; }
+        public string CategoryName { get; set; }
+
+        public double CostRentForDay { get; set; }
     }
 }

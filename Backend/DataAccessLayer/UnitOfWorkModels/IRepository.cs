@@ -8,7 +8,7 @@ namespace DataAccessLayer.UnitOfWorkModels
 {
     public interface IRepository<T> where T : class
     {
-        IEnumerable<T> GetAll();
+        IQueryable<T> GetAll();
 
         T Get(int id);
 

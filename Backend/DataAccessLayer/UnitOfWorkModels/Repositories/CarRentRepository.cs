@@ -43,9 +43,9 @@ namespace DataAccessLayer.UnitOfWorkModels.Repositories
                 throw new Exception($"CarRent with id={id} is not found.");
         }
 
-        public IEnumerable<CarRent> GetAll()
+        public IQueryable<CarRent> GetAll()
         {
-            return _db.CarRents.ToArray();
+            return _db.CarRents;
         }
 
         public void Update(CarRent item)

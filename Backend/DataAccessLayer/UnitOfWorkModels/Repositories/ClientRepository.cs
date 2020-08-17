@@ -46,9 +46,9 @@ namespace DataAccessLayer.UnitOfWorkModels.Repositories
                 throw new Exception($"Client with id={id} is not found.");
         }
 
-        public IEnumerable<Client> GetAll()
+        public IQueryable<Client> GetAll()
         {
-            return _db.Clients.ToArray();
+            return _db.Clients;
         }
 
         public void Update(Client item)

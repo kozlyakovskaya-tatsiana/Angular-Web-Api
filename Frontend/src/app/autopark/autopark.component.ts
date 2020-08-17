@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {HttpCarService} from '../http-car.service';
+import {Car} from '../add-car/add-car.component';
 
 @Component({
   selector: 'app-autopark',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AutoparkComponent implements OnInit {
 
-  constructor() { }
+  constructor(private httpCar: HttpCarService) { }
+  cars: Car[];
 
   ngOnInit(): void {
+    this.httpCar.getCars('').subscribe(
+      data => this.cars = data
+    );
   }
 
 }

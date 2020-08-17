@@ -14,6 +14,8 @@ namespace DataAccessLayer.EF
 
         public DbSet<Car> Cars { get; set; }
 
+        public DbSet<CarCategory> CarCategories { get; set; }
+
         public DbSet<Client> Clients { get; set; }
 
         public DbSet<CarRent> CarRents { get; set; }
