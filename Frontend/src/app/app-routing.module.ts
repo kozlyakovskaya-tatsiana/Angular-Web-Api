@@ -6,6 +6,7 @@ import {RulesComponent} from './rules/rules.component';
 import {ContactComponent} from './contact/contact.component';
 import {NotFoundComponent} from './not-found/not-found.component';
 import {AddCarComponent} from './add-car/add-car.component';
+import {CarInfoComponent} from './car-info/car-info.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'rules', component: RulesComponent},
   { path: 'contact', component: ContactComponent},
   { path: 'addcar', component: AddCarComponent},
+  { path: 'car/:id', component: CarInfoComponent},
   { path: '**', component: NotFoundComponent}
 ];
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Car} from '../add-car/add-car.component';
-/*import {CarViewModel} from '../car-card/car-card.component';*/
+import {Car} from '../http-car.service';
+import {HttpCarCategoriesService} from '../http-car-categories.service';
 
 export class CarCategory {
   constructor(public text: string, public imgSrc: string) {
@@ -15,26 +15,20 @@ export class CarCategory {
 
 export class MainComponent implements OnInit {
 
-  constructor() {
-    this.car = new Car();
-    this.car.Name = 'Audi X540SA';
-    this.car.ImgSrc = 'assets/bmw1.jpg';
-    this.car.Year = 2017;
-    this.car.CostRentForDay = 17.89;
-    this.cars = [this.car, this.car, this.car, this.car];
-  }
+  constructor(private httpCarCategory: HttpCarCategoriesService) {}
 
   carCategories: CarCategory[] = [
     new CarCategory('Economy class', 'assets/ekonom.jpg'),
     new CarCategory('Middle class', 'assets/middle.jpg'),
     new CarCategory('Business class', 'assets/businessclass.jpg'),
-    new CarCategory('Minibuses', 'assets/minibus.jpg'),
-
+    new CarCategory('Minibuses', 'assets/minibus.jpg')
   ];
-  car: Car;
-  cars: Car[];
-
+  categories: string[];
   ngOnInit(): void {
+    this.httpCarCategory.getCarCategories().subscribe(
+      data => this.categories = data,
+      error => alert(error.message)
+    );
   }
 
 }

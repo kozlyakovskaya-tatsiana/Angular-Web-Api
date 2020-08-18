@@ -1,46 +1,37 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {HttpCarService} from '../http-car.service';
+import {Car, HttpCarService} from '../http-car.service';
 import {HttpCarCategoriesService} from '../http-car-categories.service';
 
-export class Car {
-  public Id: number;
-  public Name: string;
-  public Year: number;
-  public Color: string;
-  public Carcase: string;
-  public MaxPassengersAmount: number;
-  public CostRentForDay: number;
-  public ImgSrc: string | ArrayBuffer;
-  public CategoryName: string;
-}
+export const addForm: FormGroup = new FormGroup({
+  carName: new FormControl('', [
+    Validators.required,
+    Validators.maxLength(50)
+  ]),
+  carYear: new FormControl('', [
+    Validators.required,
+    Validators.min(1800)
+  ]),
+  carColor: new FormControl('', Validators.required),
+  carCarcase: new FormControl('', Validators.required),
+  carMaxPassengersAmount: new FormControl('', Validators.required),
+  carImgSrc: new FormControl('', Validators.required),
+  carCategory: new FormControl('', Validators.required),
+  carCost: new FormControl('', Validators.required),
+});
 @Component({
   selector: 'app-add-car',
   templateUrl: './add-car.component.html',
   styleUrls: ['./add-car.component.css']
 })
+
 export class AddCarComponent implements OnInit {
 
   constructor( private httpCarCategories: HttpCarCategoriesService,
                private httpCar: HttpCarService) {}
   car: Car = new Car();
   carCategories: string[];
-  addForm: FormGroup = new FormGroup({
-    carName: new FormControl('', [
-      Validators.required,
-      Validators.maxLength(50)
-    ]),
-    carYear: new FormControl('', [
-      Validators.required,
-      Validators.min(1800)
-    ]),
-    carColor: new FormControl('', Validators.required),
-    carCarcase: new FormControl('', Validators.required),
-    carMaxPassengersAmount: new FormControl('', Validators.required),
-    carImgSrc: new FormControl('', Validators.required),
-    carCategory: new FormControl('', Validators.required),
-    carCost: new FormControl('', Validators.required),
-  });
+  addForm: FormGroup = addForm;
   ngOnInit(): void {
     this.httpCarCategories.getCarCategories().subscribe(
       data => this.carCategories = data,

@@ -17,6 +17,8 @@ import { FooterComponent } from './footer/footer.component';
 import { AddCarComponent } from './add-car/add-car.component';
 import {HttpCarService} from './http-car.service';
 import {HttpClientModule} from '@angular/common/http';
+import { CarInfoComponent } from './car-info/car-info.component';
+import { EditCarComponent } from './edit-car/edit-car.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import {HttpClientModule} from '@angular/common/http';
     CarSectionComponent,
     HeadComponent,
     FooterComponent,
-    AddCarComponent
+    AddCarComponent,
+    CarInfoComponent,
+    EditCarComponent
   ],
   imports: [
     BrowserModule,

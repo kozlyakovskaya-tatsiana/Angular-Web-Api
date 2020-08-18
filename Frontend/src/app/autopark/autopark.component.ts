@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpCarService} from '../http-car.service';
-import {Car} from '../add-car/add-car.component';
+import {Car, HttpCarService} from '../http-car.service';
+
 
 @Component({
   selector: 'app-autopark',

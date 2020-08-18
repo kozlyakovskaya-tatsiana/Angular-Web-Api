@@ -14,16 +14,16 @@ namespace BusinessLogicLayer.Services
         {
             using (var db = new UnitOfWork())
             {
-                return db.CarCategories.GetAll().Select(categoty => categoty.Name);
+                return db.CarCategories.GetAll().Select(categoty => categoty.Name).ToArray();
             }
         }
 
-        public CarCategory GetCarCategory(string categoryName)
+        /*public CarCategory GetCarCategory(string categoryName)
         {
             using (var db = new UnitOfWork())
             {
                 return db.CarCategories.GetAll().Where(categoty => categoty.Name == categoryName).FirstOrDefault();
             }
-        }
+        }*/
     }
 }

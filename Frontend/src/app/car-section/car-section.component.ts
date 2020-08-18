@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Car} from '../add-car/add-car.component';
-/*import {CarViewModel} from '../car-card/car-card.component';*/
+import {Car, HttpCarService} from '../http-car.service';
+
 
 @Component({
   selector: 'app-car-section',
@@ -9,11 +9,16 @@ import {Car} from '../add-car/add-car.component';
 })
 export class CarSectionComponent implements OnInit {
   @Input() sectionName: string;
-  @Input() cars: Car[];
+  cars: Car[];
+  @Input() category: string;
 
-  constructor() { }
+  constructor(private httpCar: HttpCarService) { }
 
   ngOnInit(): void {
+    this.httpCar.getCars(this.category).subscribe(
+      data => this.cars = data,
+      error => alert(error.Message)
+    );
   }
 
 }
