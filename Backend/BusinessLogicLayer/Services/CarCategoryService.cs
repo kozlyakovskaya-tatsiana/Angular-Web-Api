@@ -18,12 +18,5 @@ namespace BusinessLogicLayer.Services
             }
         }
 
-        /*public CarCategory GetCarCategory(string categoryName)
-        {
-            using (var db = new UnitOfWork())
-            {
-                return db.CarCategories.GetAll().Where(categoty => categoty.Name == categoryName).FirstOrDefault();
-            }
-        }*/
     }
 }

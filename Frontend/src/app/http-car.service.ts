@@ -31,4 +31,7 @@ export class HttpCarService {
  public editCar(car: Car): Observable<any>{
     return  this.http.put(this.url, car);
  }
+  public deleteCar(id: number): Observable<any>{
+    return  this.http.delete(this.url + id);
+  }
 }

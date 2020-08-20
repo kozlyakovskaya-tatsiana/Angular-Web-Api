@@ -21,27 +21,23 @@ namespace WebCarRentServer.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
-                {
-                    var service = new CarService();
-
-                    await Task.Run(() => service.CreateCar(car));
-
-                    return Ok();
-                }
-                else
-                {
+                if (!ModelState.IsValid)
                     return BadRequest("Validtion was failed. Check input data and try again.");
-                }
+
+                var service = new CarService();
+
+                await Task.Run(() => service.CreateCar(car));
+
+                return Ok();
             }
             catch (Exception ex)
             {
-                return InternalServerError(ex);
+                return Content(HttpStatusCode.InternalServerError, ex.Message);
             }
 
         }
 
-        [Route("{id}")]
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> GetCar(int id)
         {
             try
@@ -55,14 +51,14 @@ namespace WebCarRentServer.Controllers
             }
             catch (Exception ex)
             {
-                return InternalServerError(ex);
+                return Content(HttpStatusCode.InternalServerError, ex.Message);
             }
 
         }
 
         [HttpGet]
-        [Route("{carCategory:alpha=}")]
-        public async Task<IHttpActionResult> GetCars(string carCategory)
+        [Route("{carCategory:alpha?}/{carsAmounut:int?}")]
+        public async Task<IHttpActionResult> GetCars(string carCategory = null, int? carsAmount = null)
         {
             try
             {
@@ -75,7 +71,7 @@ namespace WebCarRentServer.Controllers
             }
             catch (Exception ex)
             {
-                return InternalServerError(ex);
+                return Content(HttpStatusCode.InternalServerError, ex.Message);
             }
 
         }
@@ -86,23 +82,39 @@ namespace WebCarRentServer.Controllers
         {
             try
             {
-                if (ModelState.IsValid)
-                {
-                    var service = new CarService();
-
-                    await Task.Run(() => service.UpdateCar(car));
-
-                    return Ok();
-                }
-                else
-                {
+                if (!ModelState.IsValid)
                     return BadRequest("Validtion was failed. Check input data and try again.");
-                }
+
+                var service = new CarService();
+
+                await Task.Run(() => service.UpdateCar(car));
+
+                return Ok();
 
             }
             catch (Exception ex)
             {
-                return InternalServerError(ex);
+                return Content(HttpStatusCode.InternalServerError, ex.Message);
+            }
+
+        }
+
+        [HttpDelete]
+        [Route("{id:int}")]
+        public async Task<IHttpActionResult> DeleteCar(int id)
+        {
+            try
+            {
+                var service = new CarService();
+
+                await Task.Run(() => service.DeleteCar(id));
+
+                return Ok();
+
+            }
+            catch (Exception ex)
+            {
+                return Content(HttpStatusCode.InternalServerError, ex.Message);
             }
 
         }

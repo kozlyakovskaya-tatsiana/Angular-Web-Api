@@ -3,6 +3,7 @@ using DataAccessLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,7 +54,7 @@ namespace DataAccessLayer.UnitOfWorkModels.Repositories
         {
             if (item != null)
             {
-                _db.Entry(item).State = EntityState.Modified;
+                _db.Cars.AddOrUpdate(item);
             }
             else
                 throw new ArgumentNullException(nameof(item));

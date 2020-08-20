@@ -1,6 +1,6 @@
 <div class="container mt-3 mb-3">
   <h3 class="row col-md-6 offset-md-5">Edit car</h3>
-  <form [formGroup]="addForm">
+  <form [formGroup]="addForm" novalidate (ngSubmit)="editCar($event)">
     <div class="form-group row col-md-6 offset-md-3">
       <label for="carName">Car's name</label>
       <input type="text" class="form-control" id="carName" formControlName="carName" [(ngModel)]="car.Name">
@@ -86,7 +86,7 @@
       <img *ngIf="car.ImgSrc" [src]="car.ImgSrc" width="280px">
     </div>
     <div class="row col-md-2 offset-md-8 mt-2">
-      <button id="submitbtn" type="submit" class="btn btn-primary" [disabled]="addForm.invalid" (click)="editCar($event)">Edit car</button>
+      <button id="submitbtn" type="submit" class="btn btn-primary" [disabled]="addForm.invalid">Edit car</button>
     </div>
   </form>
 </div>

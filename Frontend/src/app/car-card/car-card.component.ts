@@ -8,7 +8,7 @@ import {Car} from '../http-car.service';
 })
 export class CarCardComponent implements OnInit {
   @Input() car: Car;
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }

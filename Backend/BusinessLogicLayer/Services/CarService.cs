@@ -83,5 +83,15 @@ namespace BusinessLogicLayer.Services
             }
         }
 
+        public void DeleteCar(int id)
+        {
+            using( var db = new UnitOfWork())
+            {
+                db.Cars.Delete(id);
+
+                db.Save();
+            }
+        }
+
     }
 }

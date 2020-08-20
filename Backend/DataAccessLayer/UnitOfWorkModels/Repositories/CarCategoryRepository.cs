@@ -3,6 +3,7 @@ using DataAccessLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,10 +54,7 @@ namespace DataAccessLayer.UnitOfWorkModels.Repositories
         {
             if (item != null)
             {
-                if (_db.CarCategories.Find(item.Id) == null)
-                    throw new Exception($"Car category with id={item.Id} is not found.");
-
-                _db.Entry(item).State = EntityState.Modified;
+                _db.CarCategories.AddOrUpdate(item);
             }
             else
                 throw new ArgumentNullException(nameof(item));

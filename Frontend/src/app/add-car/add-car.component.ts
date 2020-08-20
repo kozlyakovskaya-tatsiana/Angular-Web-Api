@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Car, HttpCarService} from '../http-car.service';
 import {HttpCarCategoriesService} from '../http-car-categories.service';
+import swal from 'sweetalert';
 
 export const addForm: FormGroup = new FormGroup({
   carName: new FormControl('', [
@@ -36,8 +37,10 @@ export class AddCarComponent implements OnInit {
     this.httpCarCategories.getCarCategories().subscribe(
       data => this.carCategories = data,
       error => {
-        console.log(error);
-        alert('Error has happend. Try it later.\n' + error.Message);
+        swal({
+          text: 'Error has happend.\n' + error.Message,
+          icon: 'error'
+        });
       }
     );
   }
@@ -60,13 +63,20 @@ export class AddCarComponent implements OnInit {
         const inputs = document.getElementsByTagName('input');
         /*Array.from(inputs).forEach(input => input.value = '');
         this.car.CategoryName = '';*/
-        alert('Adding is successful');
+        swal({
+          text: 'Adding is successful',
+          icon: 'success'
+        });
       },
-      error => {
+      err => {
         event.target.disabled = false;
-        console.log(error);
-        alert('Error has happend.\n' + error.Message);
-      }
+        console.log(err);
+        const errMessage: string = err.error instanceof Error ? err.error.message : err.error;
+        swal({
+            text: errMessage,
+            icon: 'error'
+          });
+        }
     );
   }
 }

@@ -4,6 +4,7 @@ using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -55,10 +56,7 @@ namespace DataAccessLayer.UnitOfWorkModels.Repositories
         {
             if (item != null)
             {
-                if (_db.Clients.Find(item.Id) == null)
-                    throw new Exception($"Client with id={item.Id} is not found.");
-
-                _db.Entry(item).State = EntityState.Modified;
+                _db.Clients.AddOrUpdate(item);
             }
             else
                 throw new ArgumentNullException(nameof(item));

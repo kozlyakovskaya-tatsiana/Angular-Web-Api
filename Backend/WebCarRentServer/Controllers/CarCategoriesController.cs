@@ -22,7 +22,7 @@ namespace WebCarRentServer.Controllers
             }
             catch (Exception ex)
             {
-                return InternalServerError(ex);
+                return Content(HttpStatusCode.InternalServerError, ex.Message);
             }
 
         }

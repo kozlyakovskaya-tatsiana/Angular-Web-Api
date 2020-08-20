@@ -3,6 +3,7 @@ import {HttpCarCategoriesService} from '../http-car-categories.service';
 import {Car, HttpCarService} from '../http-car.service';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {addForm} from '../add-car/add-car.component';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-edit-car',
@@ -49,13 +50,20 @@ export class EditCarComponent implements OnInit {
         const inputs = document.getElementsByTagName('input');
         /*Array.from(inputs).forEach(input => input.value = '');
         this.car.CategoryName = '';*/
-        alert('Editing is successful');
+        swal({
+          text: 'Adding is successful',
+          icon: 'success'
+        });
       },
-      error => {
+      err => {
         event.target.disabled = false;
-        console.log(error);
-        alert('Error has happend.\n' + error.Message);
-      }
+        console.log(err);
+        const errMessage: string = err.error instanceof Error ? err.error.message : err.error;
+        swal({
+            text: errMessage,
+            icon: 'error'
+          });
+        }
     );
   }
 }

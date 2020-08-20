@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {ReactiveFormsModule} from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
+import {HttpCarService} from './http-car.service';
+
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { ContactComponent } from './contact/contact.component';
@@ -15,8 +17,6 @@ import { CarSectionComponent } from './car-section/car-section.component';
 import { HeadComponent } from './head/head.component';
 import { FooterComponent } from './footer/footer.component';
 import { AddCarComponent } from './add-car/add-car.component';
-import {HttpCarService} from './http-car.service';
-import {HttpClientModule} from '@angular/common/http';
 import { CarInfoComponent } from './car-info/car-info.component';
 import { EditCarComponent } from './edit-car/edit-car.component';
 

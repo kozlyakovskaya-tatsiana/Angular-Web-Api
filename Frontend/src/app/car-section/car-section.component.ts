@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Car, HttpCarService} from '../http-car.service';
+import swal from 'sweetalert';
 
 
 @Component({
@@ -17,8 +18,14 @@ export class CarSectionComponent implements OnInit {
   ngOnInit(): void {
     this.httpCar.getCars(this.category).subscribe(
       data => this.cars = data,
-      error => alert(error.Message)
+      err => {
+        console.log(err);
+        const errMessage: string = err.error instanceof Error ? err.error.message : err.error;
+        swal({
+          text: errMessage,
+          icon: 'error'
+        });
+      }
     );
   }
-
 }

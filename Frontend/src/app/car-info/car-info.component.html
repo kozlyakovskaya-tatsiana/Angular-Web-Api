@@ -15,12 +15,12 @@
           <h5 class="cart-text">Price for day of rent: {{car?.CostRentForDay| currency}}</h5>
         </div>
         <div class="text-right mb-3">
-          <button type="button" class="btn btn-danger mr-2">Delete</button>
-          <button type="button" class="btn btn-warning mr-2" >Edit</button>
+          <button type="button" class="btn btn-danger mr-2" (click)="deleteCar($event)">Delete</button>
+          <button type="button" class="btn btn-warning mr-2" (click)="showEditComponent=true" >Edit</button>
           <button type="button" class="btn btn-success mr-2">Rent this car</button>
         </div>
       </div>
     </div>
   </div>
 </div>
-<app-edit-car [car]="car"></app-edit-car>
+<app-edit-car [car]="car" [hidden]="!showEditComponent"></app-edit-car>
